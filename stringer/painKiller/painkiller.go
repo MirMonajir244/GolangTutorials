@@ -9,8 +9,17 @@ const (
 	Aspirin                   //1
 	Ibuprofen                 //2
 	Paracetamol               //3
-	Acetaminophen = Paracetamol
+	Acetaminophen             //4
 )
+
+/*
+var(
+	name string
+	age int
+)
+*/
+//go get golang.org/x/tools/cmd/stringer
+//stringer -type=Pill
 
 func main() {
 	fmt.Println(Paracetamol)

@@ -4,9 +4,9 @@ package main
 
 import "strconv"
 
-const _Pill_name = "PlaceboAspirinIbuprofenParacetamol"
+const _Pill_name = "PlaceboAspirinIbuprofenParacetamolAcetaminophen"
 
-var _Pill_index = [...]uint8{0, 7, 14, 23, 34}
+var _Pill_index = [...]uint8{0, 7, 14, 23, 34, 47}
 
 func (i Pill) String() string {
 	if i < 0 || i >= Pill(len(_Pill_index)-1) {

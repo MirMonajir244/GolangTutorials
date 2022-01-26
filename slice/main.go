@@ -2,8 +2,14 @@ package main
 
 import "fmt"
 
+type Person struct {
+	Name string
+	Age  int
+}
 
-
+func (p Person) String() string {
+	return fmt.Sprintf("%v (%v years)", p.Name, p.Age)
+}
 func main() {
 	/*
 		arr[0] = 1
@@ -98,7 +104,21 @@ func main() {
 	// Stringer
 	/* A Stringer is a type that can describe itself as a string. The fmt package (and many others) look for this interface to print values.
 	 */
-	
 
+	/*
+			 type Person struct {
+			Name string
+			Age  int
+		}
+
+		func (p Person) Details() string {
+			return fmt.Sprintf("%v (%v years)", p.Name, p.Age)
+		}
+	*/
+
+	a := Person{"Tarun", 27}
+	//fmt.Println(a)
 	//fmt.Println("name: ", a.Name, "age: ", a.Age)
-	}
+
+	fmt.Println(a)
+}
