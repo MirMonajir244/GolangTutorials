@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sort"
 )
-
+//kth from the start == (len(arr) -k -1)th from the end 
 func main() {
 	var k int
 	fmt.Println(" enter the value of k")
@@ -13,6 +13,8 @@ func main() {
 	arrSlice := arr[:]                        // created a slice of the array
 	sort.Ints(arrSlice)
 	fmt.Println(" the array after sorting becomes", arrSlice)
-	fmt.Println("the kth smallest integer is ", arrSlice[k-1])
+	fmt.Println("the ", k, "th smallest integer is ", arrSlice[k-1])
 
 }
+
+//  sort.Sort(sort.Reverse(sort.StringSlice(arr)))
