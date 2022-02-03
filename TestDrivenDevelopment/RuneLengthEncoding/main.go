@@ -48,7 +48,32 @@ func Encode(input string) (encoded_msg string) {
 	rep := 1
 	upperCaseInput := strings.ToUpper(input)
 	for index, val := range upperCaseInput {
-		if isDigit(string(val)) {
+		if isAllowed(string(val)) {
+			if index+1 < len(upperCaseInput) {
+				if upperCaseInput[index] == upperCaseInput[index+1] {
+					rep++
+				} else {
+					charCount := ""
+					if rep > 1 {
+						charCount = strconv.Itoa(rep)
+					}
+					encoded_msg = encoded_msg + charCount + string(upperCaseInput[index])
+					rep = 1
+				}
+			} else {
+				charCount := ""
+				if rep > 1 {
+					charCount = strconv.Itoa(rep)
+				}
+				encoded_msg = encoded_msg + charCount + string(upperCaseInput[index])
+				rep = 1
+			}
+		} else if isDigit(string(val)) {
+			return "error: digits not allowed"
+		} else {
+			return "error special character"
+		}
+		/*if isDigit(string(val)) {
 			return "error: digits not allowed"
 		} else if !isLetter(string(val)) && string(val) != " " && !isSelectedSpecialChar(string(val)) {
 			return "error special character"
@@ -74,7 +99,7 @@ func Encode(input string) (encoded_msg string) {
 				rep = 1
 			}
 
-		}
+		}*/
 	}
 	//fmt.Println("encoded_msg: ", encoded_msg)
 	return

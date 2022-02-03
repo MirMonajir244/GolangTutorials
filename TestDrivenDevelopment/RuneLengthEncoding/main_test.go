@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestEncode(t *testing.T) {
 	for _, c := range test_cases {
@@ -14,7 +17,7 @@ func TestEncode(t *testing.T) {
 
 func TestDigit(t *testing.T) {
 	if isDigit("5") {
-		t.Logf("Pass digit test %d", 5)
+		t.Logf(fmt.Sprintf("Pass digit test %d", 5))
 	} else {
 		t.Fatalf("Fail : digit test , wanted : true, got: false")
 	}
